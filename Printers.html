@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			Printers OTIS
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+		/* Remove the navbar's default margin-bottom and rounded borders */ 
+	
+		.button {
+		background-color: black;
+		border: none;
+		color: white;
+		padding: 5px 10px;
+		text-align: center;
+		font-size: 16px;
+		cursor: pointer;
+		}
+
+		.button:hover {
+		background-color: green;
+	}	
+
+	
+		
+		
+
+
+		</style>
+		
+	</head>
+	
+
+
+
+
+<head>
+      <meta charset="utf-8">
+      <style>
+          table {
+              border-collapse: collapse;
+              border: 2px black solid;
+              font: 12px sans-serif;
+          }
+
+          td {
+              border: 1px black solid;
+              padding: 5px;
+          }
+		
+		table {
+		    width: 100%;
+		}
+
+		th {
+		    height: 100px;
+		}
+		th {
+		    background-color: #4CAF50;
+		    
+		}
+		
+		
+		
+		
+		tr:nth-child(even) {background-color: gray;}
+		tr:nth-child(odd) {background-color: #4CAF50;}
+		tr:hover {background-color: white;}
+		
+      </style>
+  </head>
+  <body>
+      
+      <script src="d3.min.js?v=3.2.8"></script>
+
+      <script type="text/javascript"charset="utf-8">
+		 var fileText1;
+		 document.addEventListener('DOMContentLoaded', function(){
+		     //login();
+		 });
+		 
+		 function createTable(tableData) {
+			 var table = document.createElement('table');
+			 table.setAttribute("id", "table1");
+		   var tableBody = document.createElement('tbody');
+
+		   tableData.forEach(function(rowData) {
+		     var row = document.createElement('tr');
+
+		     rowData.forEach(function(cellData) {
+		       var cell = document.createElement('td');
+		       cell.appendChild(document.createTextNode(cellData));
+		       row.appendChild(cell);
+		     });
+
+		     tableBody.appendChild(row);
+		   });
+
+		   table.appendChild(tableBody);
+		   document.body.appendChild(table);
+		 }
+		 
+		 
+		 function csvToArray (csv) {
+		     rows = csv.split("\n");
+
+		     return rows.map(function (row) {
+		     	return row.split(",");
+		     });
+		 };
+		 
+		 function readTextFile(file)
+		 {
+			 var txt = "test";
+		     var rawFile = new XMLHttpRequest();
+		     rawFile.open("GET", file, true);
+		     rawFile.onreadystatechange = function ()
+		     {
+		         if(rawFile.readyState === 4)
+		         {
+		             if(rawFile.status === 200 || rawFile.status == 0)
+		             {
+		                txt = rawFile.responseText;
+		                //alert(fileText1);
+					 var arraydd = csvToArray(txt);//
+					 createTable(arraydd);
+		 
+					 
+					 return txt;
+		             }
+		         }
+		     }
+			//return txt;
+		     rawFile.send(null);
+		 }// end of function
+		
+function doFunction(){
+			 $("#table1").remove();
+			 ajaxmagic();
+		 readTextFile("printer.csv");
+	 }
+	 readTextFile("printer.csv");
+		 
+		 
+ function ajaxmagic()
+      {
+          $.post(                             //call the server
+              "helloworld.php",                     //At this url
+              {
+           
+              }                               //And send this data to it
+          ).done(                             //And when it's done
+              function(data)
+              {alert(data);
+                  $('#fromAjax').html(data);  //Update here with the response
+              }
+          );
+      }
+		 
+		
+      </script>
+  </body>
+
+
+	<body>
+		<h1 text-align: center style="color:red">    <strong><em>Printers</em></strong>
+			
+			
+			<input id="clickMe" type="button" value="Refresh" onclick="doFunction();" />
+			
+		</h1>
+    
+	</body>
+
+</html>
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+

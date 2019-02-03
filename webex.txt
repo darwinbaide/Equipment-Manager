@@ -1,0 +1,124 @@
+Webex Department Information
+Accounting
+username: acct
+password: Video123!
+https://rubiz.webex.com/meet/acct
+Join by phone
++1-415-655-0002 US Toll
+Access code: 646 743 570
+Host PIN: 1821
+
+Finance
+username: fin
+password: Video123!
+https://rubiz.webex.com/meet/fin
+Join by phone
++1-415-655-0002 US Toll
+Access code: 648 862 228
+Host PIN: 1821
+
+Marketing
+username: mkt
+password: Video123!
+Join by phone
+https://rubiz.webex.com/meet/mkt
++1-415-655-0002 US Toll
+Access code: 646 390 044
+Host PIN: 1821
+
+Management Science &
+Information Systems
+username: msis
+password: Video123!
+https://rubiz.webex.com/meet/msis
++1-415-655-0002 US Toll
+Access code: 644 935 684
+Host PIN: 1821
+
+Supply Chain
+username: sc
+password: Video123!
+https://rubiz.webex.com/meet/sc17
+Join by phone
++1-415-655-0002 US Toll
+Access code: 647 634 577
+Host PIN: 1821
+
+Management & Global Business
+username: mgb
+password: Video123!
+https://rubiz.webex.com/meet/mgb
+Join by phone
++1-415-655-0002 US Toll
+Access code: 646 128 485
+Host PIN: 1821
+
+Masters of Business
+Administration
+username: mba
+password: Video123!
+https://rubiz.webex.com/meet/mba
+Join by phone
++1-415-655-0002 US Toll
+Access code: 642 825 564
+Host PIN: 1821
+
+Account 01
+-----------------------------------------------------------------------------------------------------
+What to provide External Participants:
+External participants using a computer with camera and audio will need the Website link given below.  They will be able to see the presentation, the presenter and also be able to ask questions.
+Website:  https://rubiz.webex.com/meet/rbs01
+
+If anyone who wants to just dial in from the US using a phone, they will need the following details:
+Audio connection:  1-415-655-0002
+Access Code:  647 686 575
+
+Account 02
+-----------------------------------------------------------------------------------------------------
+What to provide External Participants:
+External participants using a computer with camera and audio will need the Website link given below.  They will be able to see the presentation, the presenter and also be able to ask questions.
+Website:  https://rubiz.webex.com/meet/rbs02
+
+If anyone who wants to just dial in from the US using a phone, they will need the following details:
+Audio connection:  1-415-655-0002
+Access Code:  647 686 575
+
+Account 03
+-----------------------------------------------------------------------------------------------------
+What to provide External Participants:
+External participants using a computer with camera and audio will need the Website link given below.  They will be able to see the presentation, the presenter and also be able to ask questions.
+Website:  https://rubiz.webex.com/meet/rbs03
+
+If anyone who wants to just dial in from the US using a phone, they will need the following details:
+Audio connection:  1-415-655-0002
+Access Code:  647 686 575
+
+Account 04
+-----------------------------------------------------------------------------------------------------
+What to provide External Participants:
+External participants using a computer with camera and audio will need the Website link given below.  They will be able to see the presentation, the presenter and also be able to ask questions.
+Website:  https://rubiz.webex.com/meet/rbs04
+
+If anyone who wants to just dial in from the US using a phone, they will need the following details:
+Audio connection:  1-415-655-0002
+Access Code:  647 686 575
+
+Account 05
+---------------------------------------------------------------------------------------------------
+What to provide External Participants:
+External participants using a computer with camera and audio will need the Website link given below.  They will be able to see the presentation, the presenter and also be able to ask questions.
+Website:  https://rubiz.webex.com/meet/rbs05
+
+If anyone who wants to just dial in from the US using a phone, they will need the following details:
+Audio connection:  1-415-655-0002
+Access Code:  647 686 575
+
+Account DL
+------------------------------------------------------------------------------------------------------
+Connection Information:
+External participants using a computer with camera and audio will need the Website link given below.  You will be able to share your presentation to the class.
+https://rubiz.webex.com/meet/rbsdl01
+
+If anyone who wants to just dial in from the US using a phone, they will need the following details:
++1-415-655-0002  US Toll
+640 455 894  Access code

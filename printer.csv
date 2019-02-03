@@ -1,0 +1,12 @@
+IP,Name,Tray1,Tray2,Tray3,Tray4,Black,Yellow,Cyan,Magenta,Waste
+192.168.32.12,Dean's Office,Ready,Ready,Empty,Ready,  20%,  20%,  20%,  70%,OK
+192.168.32.13,1133,Ready,Ready,Ready,Open,  50%,100%,  50%,  20%,OK
+192.168.32.14,1100C,Ready,Ready,Empty,Ready,  80%,  30%,  10%,  80%,OK
+192.168.32.15,1000B,Ready,Ready,Open,Ready,  50%,  90%,  50%,  90%,OK
+192.168.32.16,900C,Ready,Ready,Ready,Ready,  80%,  70%,  90%,  60%,OK
+192.168.32.17,900B,Ready,Ready,Ready,Ready,  10%,  10%,  10%,  10%,OK
+192.168.32.18,426,Ready,Ready,Ready,Ready,  60%,  30%,  30%,  10%,OK
+192.168.32.19,462,Ready,Ready,Empty,Ready,  70%,  60%,  30%,  20%,Reorder
+192.168.32.21,Student Services,Ready,Ready,Ready,Ready,  40%,  50%,  40%,  30%,OK
+192.168.32.30,325,Ready,Ready,Empty,Ready,  10%,  80%,  90%,  10%,OK
+192.168.32.33,331,Ready,Ready,Empty,Ready,  10%,  20%,  20%,  80%,Reorder

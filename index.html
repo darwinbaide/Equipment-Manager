@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Autograder </title>
+</head>
+ <script>
+function stuff(){
+//	alert("runs");
+	var ucid, pass,total;
+
+	var xhttp = new XMLHttpRequest();
+
+	version = "login"
+	ucid = document.getElementById("UCID").value;
+	pass = document.getElementById("password").value;
+	total = "version=".concat(version,"&username=",ucid,"&password=",pass);
+  if (ucid == '' || pass == ''){
+      document.getElementById("output").innerHTML = "Nothing was submitted, please try again";
+      exit();
+  }
+	xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+			//alert("got a response from server");
+
+try {
+ var myObj = JSON.parse(this.responseText);
+ //**************************************************************8
+ //**********************************88888888888888888888888888888888888888888888
+ //document.getElementById("output").innerHTML = this.responseText;
+
+} catch (e) {
+	alert(e);
+  alert(this.responseText);
+}
+
+  if(myObj.Usertype == "student"){
+  	localStorage.setItem("user", ucid);
+  	localStorage.setItem("userType", "student");
+
+    if(myObj.response == "Succesful"){
+			window.location.replace("main.html");
+		//alert("Succesful");
+		  }
+    else{alert(myObj.response);}
+  }
+  else{
+  	document.getElementById("output").innerHTML = "Invalid Login. Please try again.";
+  }
+    }
+  };
+	xhttp.open("POST", "database.php", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send(total);
+  //alert(this.responseText);
+}
+</script>
+
+
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 15px 0 40px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 20%;
+  border-radius: 30%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 30;
+  top: 30;
+  width: 70%; /* Full width */
+  height: 70%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 30px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto 30% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 12px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 200px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+.wrapper{
+ border: 7px solid black;
+ border-radius: 254px;
+ background-color:white;
+text-align:center;
+color:black;
+font-size: 50px;
+}
+</style>
+
+
+<div class="imgcontainer">
+  <img src="login-icon.jpg" alt="Avatar" class="avatar">
+</div>
+</head>
+<body>
+
+
+	<div class="Modal" id='imgStuff'>
+	</div>
+	<form>
+		<div class="ucid">
+			Username: <input type="text" id ="UCID" name="ucid">
+		</div>
+		<div class="password">
+			Password:<input type="password" id = "password" name="pass">
+		</div>
+		<div class="submit button">
+			<button type="button" onclick="stuff()">Send</button>
+		</div>
+	</form>
+	<div>
+		<h1 id = 'output'></h1>
+	</div>
+
+
+
+</body>
+</html>

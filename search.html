@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<title>Search</title>
+<body onLoad="stuff()" >
+	<h1> <strong>Search Long Term Loans</strong> </h1>
+
+
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn" >Options</button>
+    <div id="myDropdown" class="dropdown-content">
+      <button class="button2" onclick="setValue('firstname')">First Name</button>
+      <button class="button2" onclick="setValue('lastname')">Last Name</button>
+      <button class="button2" onclick="setValue('department')">Department</button>
+      <button class="button2" onclick="setValue('dates')">Date</button>
+      <button class="button2" onclick="setValue('address')">Address</button>
+      <button class="button2" onclick="setValue('po')">PO</button>
+      <button class="button2" onclick="setValue('serials')">Serial</button>
+
+    </div>
+  </div>
+
+
+
+
+
+  <input type="text" size="7%" name="firstname" id="type" readonly="readonly" class="input">
+	<input type="text" size="20%" name="firstname" id="item" class="input">
+  <button onclick="lookup()" class="button">Search</button>
+	<input type="text" size="4%" name="firstname" id="edit2" class="input">
+  <button onclick="edit()" class="button">Close Out</button>
+	<input type="text" size="4%" name="firstname" id="edit3" class="input">
+  <button onclick="toPdf()" class="button">To PDF</button>
+
+<div class ="output" id="output">
+
+
+</div>
+
+
+</body>
+
+
+<script>
+
+
+
+
+
+function setValue(type) {
+	document.getElementById('type').value = type;
+  }
+function edit(number) {
+	var num3 = document.getElementById("edit2");
+	num3=num3.value;
+	var input1 = document.getElementById(num3+"-1").innerText;
+	var input2 = document.getElementById(num3+"-2").innerText;
+	var input3 = document.getElementById(num3+"-3").innerText;
+	var input4 = document.getElementById(num3+"-4").innerText;
+	var input5 = document.getElementById(num3+"-5").innerText;
+	var input6 = document.getElementById(num3+"-6").innerText;
+	var input7 = document.getElementById(num3+"-7").innerText;
+	var input8 = document.getElementById(num3+"-8").innerText;
+	var input9 = document.getElementById(num3+"-9").innerText;
+	window.localStorage.setItem('input1', input1);
+	window.localStorage.setItem('input2', input2);
+	window.localStorage.setItem('input3', input3);
+	window.localStorage.setItem('input4', input4);
+	window.localStorage.setItem('input5', input5);
+	window.localStorage.setItem('input6', input6);
+	window.localStorage.setItem('input7', input7);
+	window.localStorage.setItem('input8', input8);
+	window.localStorage.setItem('input9', input9);
+
+var result= input1+","+input2+","+input3+","+input4+","+input5+","+input6+","+input7+","+input8+","+input9;
+//alert(result);
+	window.location.href="entry.html";
+
+	}
+function lookup(){
+	var type5= document.getElementById('type').value;
+	var query2=document.getElementById('item').value;
+	if(type5 == ""){alert("Incorrect Search");return;}
+	if(query2 == ""){stuff();return;}
+
+
+	document.getElementById("output").innerHTML = "";
+
+	var xhttp = new XMLHttpRequest();
+	version = 'lookup';
+
+	total = "version=".concat(version,"&type=",type5,"&query=",query2); // This will hold the data to end
+	//alert(total);
+
+
+
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+	//alert(this.response);
+		document.getElementById("output").innerHTML = this.response;
+	}
+
+	};
+
+
+	xhttp.open("POST", "database.php", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send(total);
+
+		}
+function stuff(){
+	//	alert("Runs");
+		 document.getElementById("output").innerHTML = "";
+	 var po1,po2,po3,po4,de1,de2,de3,de4,se1,se2,se3,se4,Fname,Lname,dates,department1,address1;
+
+	 var xhttp = new XMLHttpRequest();
+	 version = 'search';
+
+	 total = "version=".concat(version); // This will hold the data to end
+	//alert(total);
+
+
+
+	 xhttp.onreadystatechange = function() {
+		 if (this.readyState == 4 && this.status == 200) {
+	//alert(this.response);
+		 document.getElementById("output").innerHTML = this.response;
+	 }
+
+	 };
+
+
+	xhttp.open("POST", "database.php", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send(total);
+
+}
+
+
+
+function toPdf(){
+		//alert("Runs PDF");
+
+	var num3 = document.getElementById("edit3");
+	num3=num3.value;
+//	alert(num3);
+
+	//	 document.getElementById("output").innerHTML = "";
+	 var xhttp = new XMLHttpRequest();
+	 version = 'topdf';
+	 total = "version=".concat(version,'&num=',num3); // This will hold the data to end
+	 xhttp.onreadystatechange = function() {
+		 if (this.readyState == 4 && this.status == 200) {
+
+		 //document.getElementById("output").innerHTML = this.response;
+		 alert(this.response);
+	 }
+	 };
+	xhttp.open("POST", "database.php", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send(total);
+
+}
+
+
+
+
+
+</script>
+
+<style>
+.customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.customers td, .customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.customers tr:nth-child(even){background-color: #f2f2f2;}
+
+.customers tr:hover {background-color: #ddd;}
+
+.customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+/* Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+	padding: 11px 12px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #4CAF50;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.button2{
+  color: white;
+  background-color: #4CAF50;
+  padding: 5px 14px;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  border: 0px;
+}
+
+
+.button
+{
+	background-color: #4CAF50; /* Green */
+border: none;
+color: white;
+padding: 11px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+}
+.input{
+
+
+
+
+padding: 8px 3px;
+
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+
+}
+
+
+/* Change color of dropdown links on hover */
+.dropdown-content button2:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+</html>

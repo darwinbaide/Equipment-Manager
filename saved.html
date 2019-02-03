@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<title>Saved</title>
+<body onLoad="stuff()">
+	<h1> <strong>Saved Entries for Long term Loan</strong> </h1>
+
+<input id="edit#" > <button class="button2" onclick="load()"> Load entry#</button>
+
+
+
+<div class ="output" id="output">
+
+
+</div>
+
+
+</body>
+<script>
+
+function load(){
+
+var input3= document.getElementById("edit#").value;
+var text4 = window.localStorage.getItem(input3);
+window.localStorage.clear();
+//alert(text4);
+var text1 = text4.split("-");
+var text2 = text1[0].split(",");
+var first=text2[0]; window.localStorage.setItem('input2',first);
+var last=text2[1]; window.localStorage.setItem('input3',last);
+var date=text2[2]; window.localStorage.setItem('input4',date);
+var department3=text2[3]; window.localStorage.setItem('input5',department3);
+var address3=text2[4]; window.localStorage.setItem('input6',address3);
+var entry3=text2[5]; window.localStorage.setItem('input1',entry3);
+var d1=text2[6]; window.localStorage.setItem('input8',d1);
+var d2=text1[1]; window.localStorage.setItem('d2',d2);
+var d3=text1[2]; window.localStorage.setItem('d3',d3);
+var d4=text1[3]; window.localStorage.setItem('d4',d4);
+var s1=text1[4]; window.localStorage.setItem('input9',s1);
+var s2=text1[5]; window.localStorage.setItem('s2',s2);
+var s3=text1[6]; window.localStorage.setItem('s3',s3);
+var s4=text1[7]; window.localStorage.setItem('s4',s4);
+var p1=text1[8]; window.localStorage.setItem('input7',p1);
+var p2=text1[9]; window.localStorage.setItem('p2',p2);
+var p3=text1[10]; window.localStorage.setItem('p3',p3);
+var p4=text1[11]; window.localStorage.setItem('p4',p4);
+window.location.href = "entry.html";
+
+
+
+}
+function tableCreate(respo) {
+	//alert(respo);
+  var body = document.getElementsByTagName('body')[0];
+  var tbl = document.createElement('table');
+	;
+	tbl.setAttribute('class', 'customers');
+
+  var tbdy = document.createElement('tbody');
+
+
+	var header = tbl.createTHead();
+	// Create an empty <tr> element and add it to the first position of <thead>:
+	var row = header.insertRow(0);
+	// Insert a new cell (<td>) at the first position of the "new" <tr> element:
+	//var cell6 = row.insertCell(0);	cell6.innerHTML = "Hidden";
+	//cell6.setAttribute("style", "visibility:collapse;");
+	var cell5 = row.insertCell(0);	cell5.innerHTML = "Address";
+	var cell4 = row.insertCell(0);	cell4.innerHTML = "Department";
+	var cell3 = row.insertCell(0);	cell3.innerHTML = "Date";
+	var cell2 = row.insertCell(0);	cell2.innerHTML = "Last Name";
+	var cell1 = row.insertCell(0);	cell1.innerHTML = "First Name";
+	var cell = row.insertCell(0);	cell.innerHTML = "Entry #";
+
+
+
+
+
+	var text1 = respo.split("-#-");
+
+	var arrayLength = text1.length;
+	//alert(text1[1]);
+
+
+  for (var i = 1; i < arrayLength; i++) {
+    var tr = document.createElement('tr');
+		text2=text1[i].split(",");
+		var td = document.createElement('td');
+
+		td.appendChild(document.createTextNode( text2[5]))
+
+		tr.appendChild(td)
+	  for (var j = 0; j < 6; j++) {
+
+			if (i == 2 && j == 5) {
+        break
+      } else {
+				if(j == 5){continue;}
+        var td = document.createElement('td');
+        td.appendChild(document.createTextNode(text2[j]));
+				window.localStorage.setItem(text2[5],text1[i]);
+        tr.appendChild(td)
+      }
+    }
+    tbdy.appendChild(tr);
+  }
+  tbl.appendChild(tbdy);
+  body.appendChild(tbl)
+}
+tableCreate();
+
+
+
+function stuff(){
+//	alert("Runs");
+	 document.getElementById("output").innerHTML = "";
+ var po1,po2,po3,po4,de1,de2,de3,de4,se1,se2,se3,se4,Fname,Lname,dates,department1,address1;
+
+ var xhttp = new XMLHttpRequest();
+ version = 'saves';
+
+ total = "version=".concat(version); // This will hold the data to end
+//alert(total);
+
+
+
+ xhttp.onreadystatechange = function() {
+	 if (this.readyState == 4 && this.status == 200) {
+		 //alert(this.response);
+		 tableCreate(this.response);
+ }
+
+ };
+
+
+xhttp.open("POST", "database.php", true);
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send(total);
+
+}
+</script>
+
+<style>
+
+.customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+	text-align: center;
+}
+
+.customers td, .customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.customers tr:nth-child(even){background-color: #f2f2f2;}
+
+.customers tr:hover {background-color: #ddd;}
+
+.customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+.customers thead {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+.button2{
+  color: white;
+  background-color: #3e8e41;
+  padding: 2px 6px;
+  text-decoration: none;
+
+  width: 15%;
+  border: 0px;
+}
+</style>
+</html>

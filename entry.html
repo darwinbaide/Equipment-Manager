@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<link href="styles1.css" rel="stylesheet" type="text/css">
+		<title>Equipment Manager</title>
+	</head>
+	<body onLoad="stuffy()" >
+		<div class="center" style="background-color:#e8e8e8;">
+			<h1>
+				Sign out Form
+
+			</h1>
+
+		</div>
+		<div class="row">
+			<div class="column"  style="background-color:#e8e8e8;">
+				<strong style="font-size:20px;">
+					#1
+				</strong>
+				PO:<input type="text" size="12%" name="lastname" id="po1" value="">
+
+				Description:<input type="text" size="12%" name="lastname" id="de1" value="">
+
+				Serial#:<input type="text" size="12%" name="lastname" id="se1" value="">
+
+
+			</div>
+
+			<div class="column"  style="background-color:#e8e8e8;">
+				<strong style="font-size:20px;">
+					#2
+				</strong>
+				PO:<input type="text" size="12%" name="lastname" id="po2" value="">
+
+				Description:<input type="text" size="12%" name="lastname" id="de2" value="">
+
+				Serial#:<input type="text" size="12%" name="lastname" id="se2" value="">
+
+
+			</div>
+			<div class="column"  style="background-color:#e8e8e8;">
+				<strong style="font-size:20px;">
+					#3
+				</strong>
+				PO:<input type="text" size="12%" name="lastname" id="po3" value="">
+
+				Description:<input type="text" size="12%" name="lastname" id="de3" value="">
+
+				Serial#:<input type="text" size="12%" name="lastname" id="se3" value="">
+
+
+			</div>
+			<div class="column"  style="background-color:#e8e8e8;">
+				<strong style="font-size:20px;">
+					#4
+				</strong>
+				PO:<input type="text" size="12%" name="lastname" id="po4" value="">
+
+				Description:<input type="text" size="12%" name="lastname" id="de4" value="">
+
+				Serial#:<input type="text" size="12%" name="lastname" id="se4" value="">
+
+
+			</div>
+		</div>
+		<br><br>
+		<div class="row" style="background-color:#e8e8e8;">
+			<br>
+			<br>
+		</div>
+
+		<div class="row" >
+			<div class="column2" style="background-color:#e8e8e8;">
+				<div class="row" style="background-color:;">
+					First name:<br>
+				</div>
+				<div class="row" style="background-color:;">
+					Last name:<br>
+				</div>
+				<div class="row" style="background-color:;">
+					Date:
+				</div>
+				<div class="row" style="background-color:;">
+					Department:<br>
+				</div>
+				<div class="row" style="background-color:;">
+					Address:<br>
+				</div>
+				<div class="row" style="background-color:;">
+					<br>
+
+				</div>
+			</div>
+			<div class="column3" style="background-color:#e8e8e8;">
+				<div class="row" style="background-color:;">
+					<input type="text" size="25%" name="firstname" id="fname">(*)
+				</div>
+				<div class="row" style="background-color:;">
+					<input type="text" size="25%" name="lastname" id="lname" value="">(*)
+				</div>
+				<div class="row" style="background-color:;">
+					<input class="text" size="25%" type="text" name="Date1" id="Date">(*)
+				</div>
+				<div class="row" style="background-color:;">
+					<input type="text" size="25%" name="department" id="Department">(*)
+				</div>
+				<div class="row" style="background-color:;">
+					<input type="text" size="25%" name="address" id="Address">(*)
+				</div>
+				<div class="row" style="background-color:;">
+					<br>
+				</div>
+			</div>
+		</div>
+		<button class="collapsible">Sign Here</button>
+		<div class="content">
+
+			<div class="m3">
+
+				<div id="signature-pad" class="signature-pad">
+					<div class="signature-pad--body">
+						<canvas></canvas>
+					</div>
+					<div class="signature-pad--footer">
+						<div class="description">Sign above</div>
+
+						<div class="signature-pad--actions">
+							<div>
+								<button type="button" class="button clear" data-action="clear">Clear</button>
+								<button type="button" class="button" data-action="undo">Undo</button>
+
+							</div>
+							
+						</div>
+					</div>
+				</div>
+
+
+				<script src="sig-app.js"></script>
+			</div>
+
+
+
+		</div>
+
+
+
+
+		<div>
+			<h3 color="white" id='output'></h3>
+		</div >
+		<div class="row">
+		<button class="button" type="button" onclick="stuff('save')">Save</button>
+		<button class="button" type="button" onclick="stuff('entry')">Submit</button>
+
+	</div>
+
+	</body>
+
+
+
+
+
+  <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="css/ie9.css">
+  <![endif]-->
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39365077-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+
+<body onselectstart="return false" class="">
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function stuff(versionx){
+//	alert("Runs");
+	 document.getElementById("output").innerHTML = "";
+ var po1,po2,po3,po4,de1,de2,de3,de4,se1,se2,se3,se4,Fname,Lname,dates,department1,address1;
+ var sign1 = signaturePad.toDataURL("image/svg+xml"); // save image as SVG
+ console.log(sign1);
+ var xhttp = new XMLHttpRequest();
+ version = versionx;
+ po1 = document.getElementById("po1").value;
+ po2 = document.getElementById("po2").value;
+ po3 = document.getElementById("po3").value;
+ po4 = document.getElementById("po4").value;
+ de1 = document.getElementById("de1").value;
+ de2 = document.getElementById("de2").value;
+ de3 = document.getElementById("de3").value;
+ de4 = document.getElementById("de4").value;
+ se1 = document.getElementById("se1").value;
+ se2 = document.getElementById("se2").value;
+ se3 = document.getElementById("se3").value;
+ se4 = document.getElementById("se4").value;
+ Fname = document.getElementById("fname").value;
+ Lname = document.getElementById("lname").value;
+ dates = document.getElementById("Date").value;
+ department1 = document.getElementById("Department").value;
+ address1 = document.getElementById("Address").value;
+ total = "version=".concat(version,"&po1=",po1,"&po2=",po2
+ ,"&po3=",po3,"&po4=",po4,"&de1=",de1,"&de2=",de2
+ ,"&de3=",de3,"&de4=",de4,"&se1=",se1,"&se2=",se2
+ ,"&se3=",se3,"&se4=",se4,"&fname=",Fname,"&lname=",Lname
+ ,"&date=",dates,"&department=",department1,"&address=",address1,"&sign=",sign1
+); // This will hold the data to send
+//alert(total);
+ if (Fname == '' || Lname == ''|| dates == ''|| department1 == ''|| address1 == ''|| se1 == ''){
+		 document.getElementById("output").innerHTML = "Please fill out all required sections.";
+		 exit();
+ }
+
+ if (signaturePad.isEmpty()) {
+     alert("Please provide a signature first.");
+exit();
+	 }
+
+ xhttp.onreadystatechange = function() {
+	 if (this.readyState == 4 && this.status == 200) {
+try {
+var myObj = JSON.parse(this.responseText);
+} catch (e) {
+	alert(e);
+ alert(this.responseText);
+}
+	 if(myObj.response == "Added"){
+alert("Succesfully Added");
+	window.location.replace("main.html");
+	    }
+ else{
+	 alert(myObj.response);
+	 document.getElementById("output").innerHTML = "Entry not Added.";
+ }
+	 }
+ };
+xhttp.open("POST", "database.php", true);
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send(total);
+
+}
+function stuffy()
+{
+	if("input1" in localStorage){
+	var tot1= window.localStorage.getItem('input1');
+	var tot2= window.localStorage.getItem('input2');
+	var tot3= window.localStorage.getItem('input3');
+	var tot4= window.localStorage.getItem('input4');
+	var tot5= window.localStorage.getItem('input5');
+	var tot6= window.localStorage.getItem('input6');
+	var tot7= window.localStorage.getItem('input7');
+	var tot8= window.localStorage.getItem('input8');
+	var tot9= window.localStorage.getItem('input9');
+
+
+if("d2" in localStorage){
+	var dt2= window.localStorage.getItem('d2');
+	var dt3= window.localStorage.getItem('d3');
+	var dt4= window.localStorage.getItem('d4');
+	var st2= window.localStorage.getItem('s2');
+	var st3= window.localStorage.getItem('s3');
+	var st4= window.localStorage.getItem('s4');
+	var pt2= window.localStorage.getItem('p2');
+	var pt3= window.localStorage.getItem('p3');
+	var pt4= window.localStorage.getItem('p4');
+document.getElementById("se2").value=st2;
+document.getElementById("se3").value=st3;
+document.getElementById("se4").value=st4;
+document.getElementById("de2").value=dt2;
+document.getElementById("de3").value=dt3;
+document.getElementById("de4").value=dt4;
+document.getElementById("po2").value=pt2;
+document.getElementById("po3").value=pt3;
+document.getElementById("po4").value=pt4;
+}
+	window.localStorage.clear();
+	document.getElementById("fname").value=tot2;
+	document.getElementById("lname").value=tot3;
+	document.getElementById("Date").value=tot4;
+	document.getElementById("Department").value=tot5;
+	document.getElementById("Address").value=tot6;
+	document.getElementById("po1").value=tot7;
+	document.getElementById("de1").value=tot8;
+	document.getElementById("se1").value=tot9;
+
+
+	window.localStorage.setItem('verse','editing');
+	window.localStorage.setItem('verse-num',tot1);
+}
+}
+
+</script>
+
+
+</html>
